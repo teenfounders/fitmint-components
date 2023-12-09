@@ -13,15 +13,30 @@
     --foreground-rgb: 255, 255, 255;
     --background-start-rgb: 0, 0, 0;
     --background-end-rgb: 0, 0, 0;
+     --framer-font-family: "Mona-Sans ExtraBold Wide", sans-serif;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+ 
+}
+
+ @font-face {
+   font-family: 'Oliver Regular';
+  src: url('../static/fonts/Oliver-Regular.ttf') format('woff2');
+ }
+ @font-face {
+   font-family: 'Mono Sans';
+  src: url('../static/fonts/Mona-Sans-BoldWide.ttf') format('woff2');
+    font-weight: 900;
+  
+  font-stretch: 75% 125%;
+ }
+html {
+  font-family: 'Mona Sans';
+}
+@layer components {
+  .youtubecontainer {
+    @apply bg-gradient-to-t from-white opacity-100 via-white  to-transparent ;
+  }
 }
